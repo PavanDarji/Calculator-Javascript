@@ -1,0 +1,163 @@
+<html>
+<title>Calculator</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: gray;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 14px;
+        padding-bottom: 20px;
+        width: 320px;
+
+    }
+
+    .display {
+        width: 100%;
+        height: 60px;
+        padding: 40px 0;
+        background: white;
+    }
+
+    .buttons {
+        padding: 20px 20px 0 20px;
+    }
+
+    .row {
+        width: 200px;
+        float: left;
+    }
+
+    input[type=button] {
+        width: 40px;
+        height: 40px;
+        float: left;
+        padding: 0;
+        margin: 5px;
+        box-sizing: border-box;
+        background: white;
+        border: none;
+        font-size: 30px;
+        line-height: 10px;
+        border-radius: 40%;
+        font-weight: 500;
+        color: black;
+        cursor: pointer;
+
+
+    }
+
+    input[type=text] {
+        width: 270px;
+        height: 60px;
+        float: left;
+        padding: 0;
+        box-sizing: border-box;
+        border: none;
+        background: none;
+        color: black;
+        text-align: right;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 60px;
+        margin: 0 25px;
+
+    }
+
+    .red {
+        background: steelblue !important;
+        color: #ffffff !important;
+
+    }
+
+
+    .clear {
+        width: 40px;
+        height: 40px;
+        float: left;
+        padding: 0;
+        margin: 5px;
+        box-sizing: border-box;
+        background: white;
+        border: none;
+        font-size: 30px;
+        line-height: 10px;
+        border-radius: 40%;
+        font-weight: 500;
+        color: black;
+        cursor: pointer;
+
+    }
+
+
+    .head {
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <form name="form" method="post">
+            <center>
+                <h1 class="head">Calculator</h1>
+            </center>
+            <hr>
+            <div class="display">
+                <input type="text" placeholder="0" name="displayResult">
+            </div>
+
+
+            <div class="buttons">
+                <div class="row">
+                    <input type="button" name="b7" value="7" onclick="calcNumbers(b7.value)">
+                    <input type="button" name="b8" value="8" onclick="calcNumbers(b8.value)">
+                    <input type="button" name="b9" value="9" onclick="calcNumbers(b9.value)">
+                    <input type="button" name="addb" value="+" onclick="calcNumbers(addb.value)">
+                </div>
+
+                <div class="row">
+                    <input type="button" name="b4" value="4" onclick="calcNumbers(b4.value)">
+                    <input type="button" name="b5" value="5" onclick="calcNumbers(b5.value)">
+                    <input type="button" name="b6" value="6" onclick="calcNumbers(b6.value)">
+                    <input type="button" name="subb" value="-" onclick="calcNumbers(subb.value)">
+                </div>
+
+                <div class="row">
+                    <input type="button" name="b1" value="1" onclick="calcNumbers(b1.value)">
+                    <input type="button" name="b2" value="2" onclick="calcNumbers(b2.value)">
+                    <input type="button" name="b3" value="3" onclick="calcNumbers(b3.value)">
+                    <input type="button" name="mulb" value="*" onclick="calcNumbers(mulb.value)">
+                </div>
+
+                <div class="row">
+                    <input type="button" name="b0" value="0" onclick="calcNumbers(b0.value)">
+                    <input type="button" name="potb" value="." onclick="calcNumbers(potb.value)">
+                    <input type="button" name="divb" value="/" onclick="calcNumbers(divb.value)">
+                    <input type="button" name="red" value="=" onclick="displayResult.value=eval(displayResult.value)">
+                    <input type="reset" value="C" class="clear">
+                </div>
+
+            </div>
+        </form>
+    </div>
+</body>
+
+<script>
+
+    function calcNumbers(result) {
+        form.displayResult.value = form.displayResult.value + result;
+
+    }
+
+
+</script>
+
+</html>
